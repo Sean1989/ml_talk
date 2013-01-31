@@ -35,6 +35,8 @@
     +   first run with default min samples for split leaf (2, 1)
     +   second run : use larger numbers e.g. (40, 30)
 
+*   "regularisation"
+
 
 
 2.  "Pima" dataset using R
@@ -66,14 +68,16 @@
 4.  ????    encoding text as features?
 
 
+5.  fun and games sampling gaussian processes in python
+    ---------------------------------------------------
 
 
 
+6.  Python packages to be aware of:
+    -------------------------------
 
-
-*   python packages to be aware of:
     -   numpy
-            core numeric library used by python scientific ecosystem
+            core numeric library used by python scientific/numeric ecosystem
             mature
             very expressive syntax/functions for array computation
             linear algebra routines too (solve linear systems, find eigenvalues, etc)
@@ -98,7 +102,9 @@
 
 
 
-*   R packages to be aware of
+7.  R packages to be aware of:
+    --------------------------
+
     -   randomForest
             pretty robust
             variable importance scores
@@ -115,8 +121,8 @@
 
 
 
-python demo notes:
-------------------
+misc python demo notes:
+-----------------------
 
 decision tree classifier demo
 pairs plot demo
@@ -139,8 +145,8 @@ $ shuf the_original_data.csv > shuffled_data.csv
 then cutting it into two parts
 manually added header with column names to make plotting it more readable.
 
-R demo notes:
--------------
+misc R demo notes:
+------------------
 
 install R! install randomForest!
 
@@ -159,3 +165,4 @@ demo2()
 
 demo3
 demo()
+
