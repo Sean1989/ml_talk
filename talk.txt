@@ -1,0 +1,91 @@
+"PRACTICAL MACHINE LEARNING"
+============================
+
+0.  Supervised Learning
+    -------------------
+
+-   ????
+
+
+1.  "Pima" dataset
+    --------------
+
+-   visualise dataset using matrix of scatterplots (aka "pairs" in R)
+
+-   classification problem: predict if someone will test positive to diabetes
+-   fitting decision trees
+
+-   over-fitting
+-   validation - training error vs test error
+
+-   python packages to be aware of: scikit-learn, numpy, matplotlib
+
+
+1.5 "Pima" dataset using R
+    ----------------------
+
+-   visualise dataset using pairs function
+-   ensembling
+-   randomForest
+-   variable importance scores
+
+
+2.  ???? some other dataset with missing values
+
+*   data issues (missing data)
+*   software packages to get started (python + scikit-learn, R)
+
+
+
+
+
+
+
+
+
+===============================================================
+python decision tree demo notes
+===============================================================
+
+decision tree classifier demo
+pairs plot demo
+
+requires:
+    scikit-learn
+    numpy
+    matplotlib
+    pydot & friends (pydot, graphviz, probably latex too)
+
+dataset is famous 'pima' diabetes
+
+pima_train.csv
+pima_test.csv
+
+obtained by permuting the rows of data, e.g.
+
+$ shuff the_original_data.csv > shuffled_data.csv
+
+then cutting it into two parts
+manually added header with column names to make plotting it more readable.
+
+============
+R demo notes
+============
+
+install R! install randomForest!
+
+show source file:
+
+vim demo_rf.r
+
+demo from inside interpreter!
+R
+source('demo_rf.r')
+demo1 # to view code first
+demo1() # then run it..
+
+demo2
+demo2()
+
+demo3
+demo()

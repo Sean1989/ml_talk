@@ -1,0 +1,5 @@
+*.pdf
+.RData
+.Rhistory
+*.swp
+*.pyc
