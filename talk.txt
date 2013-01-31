@@ -1,51 +1,122 @@
 "PRACTICAL MACHINE LEARNING"
 ============================
 
+-1. Notes to self
+    -------------
+
+*   install all dependencies
+*   make your terminal nice and big (ctrl + shift + =)
+
+
+
 0.  Supervised Learning
     -------------------
 
--   ????
+*   WHAT???
+*   building rules to generalise from a finite number of examples
+*   prediction
+*   requirements: labelled data
+*   (X,Y) ---train---> (x ---predict---> y~)
 
 
-1.  "Pima" dataset
-    --------------
 
--   visualise dataset using matrix of scatterplots (aka "pairs" in R)
+1.  "Pima" dataset using python
+    ---------------------------
 
--   classification problem: predict if someone will test positive to diabetes
--   fitting decision trees
+*   classification problem: predict if someone will test positive to diabetes
 
--   over-fitting
--   validation - training error vs test error
+*   visualise dataset using matrix of scatterplots (aka "pairs" in R)
 
--   python packages to be aware of: scikit-learn, numpy, matplotlib
+*   fitting decision trees
+
+*   validation - training error vs test error
+
+*   over-fitting
+    +   first run with default min samples for split leaf (2, 1)
+    +   second run : use larger numbers e.g. (40, 30)
 
 
-1.5 "Pima" dataset using R
+
+2.  "Pima" dataset using R
     ----------------------
 
--   visualise dataset using pairs function
--   ensembling
--   randomForest
--   variable importance scores
+*   visualise dataset using pairs function
+
+*   ensembles of models
+    -   what?   train many models, average their predictions
+    -   why?    attempt to gain better accuracy
+    -   requires
+    -       diversity in component models
+    -       can treat component models as black boxes (very general idea)
+
+*   "random forest" approach to ensembling
+    -   introduce randomness into decision-tree fitting algorithm
+        -   randomly limit branching choices
+    -   now fit a lot of these partial randomised decision trees
+    -   these trees are trained independently
+        -   combining them does not overfit (provided individuals are not overfitting)
+    -   nice pragmatic aspects to randomForest library:
+        -   algorithm is quite robust
+        -   produces estimate of generalisation error (test error) while running
+        -   computes variable importance scores
+        -   pretty quick (Fortran) and can also train in parallel
+
+3.  ????    some other dataset with missing values
+
+4.  ????    encoding text as features?
 
 
-2.  ???? some other dataset with missing values
-
-*   data issues (missing data)
-*   software packages to get started (python + scikit-learn, R)
 
 
 
 
 
+*   python packages to be aware of:
+    -   numpy
+            core numeric library used by python scientific ecosystem
+            mature
+            very expressive syntax/functions for array computation
+            linear algebra routines too (solve linear systems, find eigenvalues, etc)
+            not as fast as hand-rolling Fortran but a *lot* faster than python
+    -   matplotlib
+            plots things
+            handy when doing data analysis
+            can produce quite nice looking plots if enough time spent mucking about
+    -   scikit-learn
+            machine learning library
+            relatively young, but BSD licensed and actively developed
+            trees, SVM, stochastic gradient descent, ensembles, gradient boosting, ...
+            utilities for pre-processing data 
+                e.g. building sparse feature matrices from bags of words
+            quite a few interesting examples in documentation (incl. theory)
+    -   scipy
+            sparse linear algebra datastructures and algorithms
+            many numerical optimisation routines
+            spatial stuff : Delaunay triangulation, kdtree
+    -   cvxopt
+            convex optimisation library
+
+
+
+*   R packages to be aware of
+    -   randomForest
+            pretty robust
+            variable importance scores
+            hard to make it overfit
+    -   gbm
+            "gradient boosting machine" algorithm. (generalisation of AdaBoost type ideas)
+            constructs weighted linear combination of trees using boosting
+            can often get more accuracy than e.g. randomForest
+            supports many different loss functions
+    -   ggplot2
+            "grammar of graphics" plotting system
 
 
 
 
-===============================================================
-python decision tree demo notes
-===============================================================
+
+python demo notes:
+------------------
 
 decision tree classifier demo
 pairs plot demo
@@ -63,14 +134,13 @@ pima_test.csv
 
 obtained by permuting the rows of data, e.g.
 
-$ shuff the_original_data.csv > shuffled_data.csv
+$ shuf the_original_data.csv > shuffled_data.csv
 
 then cutting it into two parts
 manually added header with column names to make plotting it more readable.
 
-============
-R demo notes
-============
+R demo notes:
+-------------
 
 install R! install randomForest!
 

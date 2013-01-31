@@ -5,6 +5,8 @@ from numpy import linspace, meshgrid, ravel, subtract, exp, zeros_like, random, 
 from scipy import ndimage
 
 def make_surface(n, length_scale):
+    # BEWARE : MEMORY CONSUMPTION IS O(n**4)!!!
+
     # set up arrays of x and y coordinates defining a grid
     t = linspace(-1.0, 1.0, n)
     x, y = meshgrid(t, t)
